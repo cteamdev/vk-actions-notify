@@ -1,0 +1,25 @@
+name: 'vk-actions-notify'
+description: '🤖 Уведомления ВКонтакте для Github Actions'
+
+branding:
+  icon: 'bell'
+  color: 'blue'
+
+inputs:
+  token:
+    description: 'Токен доступа к сообществу, откуда будет отправлено сообщение'
+    required: true
+  peer_id:
+    description: 'peer_id чата, куда будет отправлено сообщение'
+    required: true
+  message:
+    description: 'Сообщение, которое будет отправлено'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.peer_id }}
+    - ${{ inputs.message }}
