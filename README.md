@@ -16,7 +16,6 @@
 
 ## Пример
 ```yaml
-# ...
 uses: cteamdev/vk-actions-notify@v1
   with:
     token: # ...
